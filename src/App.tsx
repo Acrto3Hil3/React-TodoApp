@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
-
-function App() {
+import { TodoIndexPage } from './component';
+import { AddAppointment } from './component/add-appointment';
+import { Dashboard } from './component/dashoard';
+import { DeleteAppointment } from './component/delete-appointment';
+import { EditAppointment } from './component/edit-appointment';
+import { UserLogin } from './component/user-login';
+import { UserRegister } from './component/user-register';
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <section>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<TodoIndexPage/>} />
+        <Route path='/register' element={<UserRegister/>}/>
+        <Route path='/login' element={<UserLogin/>}/>
+        <Route path='dashboard' element={<Dashboard/>} />
+        <Route path='add-appointment' element={<AddAppointment/>}/>
+        <Route path='edit-appointment' element={<EditAppointment/>} />
+        <Route path='delete-appointment' element={<DeleteAppointment/>} />
+      </Routes>
+      </BrowserRouter>
+     </section>
     </div>
-  );
+  )
 }
-
 export default App;

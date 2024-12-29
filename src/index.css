@@ -7,6 +7,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+ /* .child1{
+  background-image: url("/public/bg.png");
+  height: 100vh;
+  background-size:contain;
+  background-repeat: no-repeat;
+}  */
+.child1 {
+  background-image: url("/public/bg.png"); /* Assuming bg.png is directly inside the public folder */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  width: 50%; 
+  height: 100vh; 
+}
+
+
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
